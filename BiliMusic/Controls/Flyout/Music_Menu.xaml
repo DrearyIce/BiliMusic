@@ -1,0 +1,22 @@
+﻿<UserControl xmlns:Controls="clr-namespace:BiliMusic.Controls"  x:Class="BiliMusic.Controls.Flyout.Music_Menu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BiliMusic.Controls.Flyout"
+             mc:Ignorable="d" 
+             Height="158"
+             Width="130">
+    <Grid>
+        <Menu Background="Transparent">
+            <MenuItem x:Name="ply" Header="Play" FontFamily="{StaticResource SFPro}" Icon="􀊃" Click="ply_Click"/>
+            <MenuItem x:Name="f_n" Header="Favorite" FontFamily="{StaticResource SFPro}" Icon="􀊴" Click="f_n_Click"/>
+            <MenuItem x:Name="f_y" Header="Favorite" FontFamily="{StaticResource SFPro}" Icon="􀊵" Visibility="Collapsed" Click="f_y_Click"/>
+            <MenuItem x:Name="Addtolist" Header="Play next" FontFamily="{StaticResource SFPro}" Icon="􀋵" Click="Addtolist_Click"/>
+            <MenuItem x:Name="addtoplayinglist" Header="Add to Playinglist" FontFamily="{StaticResource SFPro}" Icon="􀋸" Click="addtoplayinglist_Click"/>
+            <MenuItem x:Name="addtolist" Header="Add to Playlist" FontFamily="{StaticResource SFPro}" Icon="􀑬" Click="addtolist_Click_1"/>
+            <MenuItem x:Name="removefromlist" Header="Remove" Visibility="Collapsed" FontFamily="{StaticResource SFPro}" Icon="􀈑" Height="26" Click="removefromlist_Click"/>
+            <MenuItem x:Name="shar" Header="Share" FontFamily="{StaticResource SFPro}" Icon="􀈂" Click="shar_Click"/>
+        </Menu>
+    </Grid>
+</UserControl>

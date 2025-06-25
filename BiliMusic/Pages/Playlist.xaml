@@ -1,0 +1,37 @@
+﻿<Page x:Class="BiliMusic.Pages.Playlist"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:BiliMusic.Controls"
+      xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+      xmlns:adonisEx="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+      xmlns:adonisHp="clr-namespace:AdonisUI.Helpers;assembly=AdonisUI"
+      xmlns:local="clr-namespace:BiliMusic.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="800"
+      Title="Playlist">
+
+    <Grid d:Background="{DynamicResource {x:Static adonisUi:Brushes.Layer0BackgroundBrush}}">
+        <Controls:IScrollViewer>
+            <Controls:IScrollViewer.Content>
+                <StackPanel>
+                    <TextBlock x:Name="_Title" Text="[Title]" TextWrapping="Wrap" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource NewYork}" FontWeight="Bold" FontSize="26" Margin="10,0"/>
+                    <TextBlock x:Name="_Desc" Text="[Desc]" TextWrapping="Wrap" Foreground="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}" FontFamily="{StaticResource NewYork}" FontWeight="Bold" FontSize="20" Margin="10,0"/>
+                    <StackPanel x:Name="songs"/>
+                    <Border Height="100"/>
+                </StackPanel>
+            </Controls:IScrollViewer.Content>
+        </Controls:IScrollViewer>
+
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10">
+            <Border CornerRadius="00" Background="{DynamicResource {x:Static adonisUi:Brushes.Layer3BackgroundBrush}}" BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer3BorderBrush}}" BorderThickness="2"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="_Add" Content="Add" FontSize="13" FontFamily="{StaticResource SFPro}" Margin="10,10,5,10" HorizontalAlignment="Right" VerticalAlignment="Center" Click="_Add_Click"/>
+                <Button x:Name="_Refresh" Content="Refresh" FontSize="13" FontFamily="{StaticResource SFPro}" Margin="5,10,5,10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Button x:Name="_PlayAll" Content="Play All" FontSize="13" FontFamily="{StaticResource SFPro}" Margin="5,10,5,10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Button x:Name="_ViewAll" Content="Back to Playlists" FontSize="13" FontFamily="{StaticResource SFPro}" Margin="5,10,10,10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

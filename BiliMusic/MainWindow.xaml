@@ -1,0 +1,175 @@
+﻿<adonisControls:AdonisWindow 
+    x:Name="_MainWindow"
+    xmlns:Controls="clr-namespace:BiliMusic.Controls"  
+    x:Class="BiliMusic.MainWindow" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" 
+    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI" 
+    Height="600" 
+    Width="800" 
+    WindowStartupLocation="CenterScreen"
+    IconVisibility="Collapsed" 
+    TitleBarBackground="Transparent"
+    xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI" Icon="/res/AppIcon.ico">
+
+    <adonisControls:AdonisWindow.Style>
+        <Style TargetType="adonisControls:AdonisWindow"
+               BasedOn="{StaticResource {x:Type adonisControls:AdonisWindow}}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsTitleBarVisible}" Value="False">
+                    <Setter Property="IconVisibility" Value="Collapsed"/>
+                    <Setter Property="TitleVisibility" Value="Collapsed"/>
+                    <Setter Property="TitleBarContent">
+                        <Setter.Value>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal"
+                                            Margin="{adonisUi:Space 2}">
+                                    <ContentControl UseLayoutRounding="True"
+                                                    Height="20"
+                                                    Focusable="False">
+                                        <ContentControl.Style>
+                                            <Style TargetType="ContentControl">
+                                                <Setter Property="ContentTemplate" Value="{DynamicResource {x:Static adonisUi:Icons.AdonisUIFull}}"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsDark,ElementName=_MainWindow}"
+                                                                 Value="True">
+                                                        <Setter Property="ContentTemplate" Value="{DynamicResource {x:Static adonisUi:Icons.AdonisUIDarkFull}}"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ContentControl.Style>
+                                    </ContentControl>
+                                </StackPanel>
+                            </Grid>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </adonisControls:AdonisWindow.Style>
+
+
+    <adonisControls:AdonisWindow.TitleBarContent>
+        <Grid>
+            
+        </Grid>
+    </adonisControls:AdonisWindow.TitleBarContent>
+
+    <adonisControls:AdonisWindow.Content>
+        <Grid Background="{DynamicResource {x:Static adonisUi:Brushes.Layer0BackgroundBrush}}" WindowChrome.IsHitTestVisibleInChrome="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftBar" Width="260"/>
+                <ColumnDefinition/>
+                <ColumnDefinition x:Name="RightBar" Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <Border Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}" Margin="0,-36,0,0"/>
+            <GridSplitter HorizontalAlignment="Right" Width="2" Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}" DragIncrement="1" Grid.Column="0" Margin="0,-36,0,0" MouseMove="GridSplitter_MouseMove" MouseLeave="GridSplitter_MouseLeave"/>
+            <Grid Margin="10,-30,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid Margin="0,20">
+                        <Image x:Name="_Logo" Source="{StaticResource AppIconDrawingImage}" MaxHeight="48" HorizontalAlignment="Left" Margin="30,0"/>
+                        <StackPanel x:Name="_LogoText" Margin="100,0,0,0">
+                            <TextBlock Text="Bili" FontWeight="Bold" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontSize="20" FontFamily="{StaticResource NewYork}"/>
+                            <TextBlock Text="Music" FontWeight="Bold" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontSize="20" FontFamily="{StaticResource NewYork}"/>
+                        </StackPanel>
+                    </Grid>
+                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2" Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"/>
+                </Grid>
+
+                <StackPanel Grid.Row="2">
+                    <ListBox x:Name="UserMenu" Margin="10">
+                        <ListBoxItem>
+                            <Controls:MenuBarItem x:Name="_account" Icon="􀉭" Header="Account"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Controls:MenuBarItem Icon="􀊫" Header="Search"/>
+                        </ListBoxItem>
+                    </ListBox>
+                    <Grid>
+                        <Border Height="2" VerticalAlignment="Top"  Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"/>
+                        <ListBox x:Name="SubMenu" Margin="10">
+                            <ListBoxItem>
+                                <Controls:MenuBarItem Icon="􀍟" Header="Settings"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <Controls:MenuBarItem Icon="􀅴" Header="About"/>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                </StackPanel>
+
+                <Grid Grid.Row="1">
+                    <ListBox x:Name="MainMenu" Margin="10">
+                        <ListBoxItem IsSelected="True">
+                            <Controls:MenuBarItem Icon="􀒼" Header="Home"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Controls:MenuBarItem Icon="􀈧" Header="Download"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Controls:MenuBarItem Icon="􀊴" Header="Favorite"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Controls:MenuBarItem Icon="􀐫" Header="History"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Controls:MenuBarItem Icon="􀉯" Header="Following"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <Controls:MenuBarItem Icon="􀏭" Header="Playlist"/>
+                        </ListBoxItem>
+                    </ListBox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1" Margin="0,-36,0,0" Background="{DynamicResource {x:Static adonisUi:Brushes.Layer0BackgroundBrush}}">
+                <Grid Margin="10,24,10,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="PageName" Text="Home" Margin="10,0" FontFamily="{StaticResource  NewYork}" FontWeight="Bold" FontSize="40" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                    <Frame x:Name="MFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Source="/Pages/Settings.xaml" Margin="0,0,-10,-10"/>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="_PlayingList" Grid.Column="2" Margin="0,-36,0,0" Visibility="Collapsed">
+                <Border Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}" BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}" BorderThickness="2,0,0,0"/>
+                <Grid Margin="10,36,10,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Playlist" Margin="10,0,10,10" FontFamily="{StaticResource  NewYork}" FontWeight="Bold" FontSize="30" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                    <Controls:IScrollViewer Grid.Row="1">
+                        <StackPanel>
+                            <StackPanel x:Name="_Playinglist"/>
+                            <Border Height="100"/>
+                        </StackPanel>
+                    </Controls:IScrollViewer>
+                </Grid>
+                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10">
+                    <Border CornerRadius="00" Background="{DynamicResource {x:Static adonisUi:Brushes.Layer3BackgroundBrush}}" BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer3BorderBrush}}" BorderThickness="2"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="_Add" Content="Add" FontSize="13" FontFamily="{StaticResource SFPro}" Margin="10,10,5,10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Button x:Name="_ClearPlayingList" Content="Clear List" FontSize="13" FontFamily="{StaticResource SFPro}" Margin="5,10,10,10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <Controls:PlayingView x:Name="Playing" Visibility="Visible" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        </Grid>
+    </adonisControls:AdonisWindow.Content>
+</adonisControls:AdonisWindow>

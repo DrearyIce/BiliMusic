@@ -1,0 +1,18 @@
+﻿<UserControl x:Name="Main" x:Class="BiliMusic.Controls.MenuBarItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BiliMusic.Controls"
+             mc:Ignorable="d">
+    <Grid Margin="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Viewbox Height="20" Width="20">
+            <TextBlock x:Name="_Icon" Text="{Binding Icon,ElementName=Main}" FontFamily="{StaticResource SFPro}" FontSize="16"/>
+        </Viewbox>
+        <TextBlock x:Name="_Text" Text="{Binding Header,ElementName=Main}" Grid.Column="1" FontFamily="{StaticResource NewYork}" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
+    </Grid>
+</UserControl>

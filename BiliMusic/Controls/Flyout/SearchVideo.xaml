@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="BiliMusic.Controls.Flyout.SearchVideo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+             xmlns:local="clr-namespace:BiliMusic.Controls.Flyout"
+             mc:Ignorable="d" 
+             Height="120" 
+             Width="220">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="Search" FontSize="15" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource SFPro}" HorizontalAlignment="Center"/>
+            <TextBox x:Name="_KeyWord" Text="" Margin="0,5" TextWrapping="NoWrap"/>
+            <Button x:Name="_Search" Margin="15,5" Content="Search"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

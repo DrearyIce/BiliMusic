@@ -1,0 +1,37 @@
+﻿<Page x:Class="BiliMusic.Pages.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:BiliMusic.Controls"
+      xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+      xmlns:adonisEx="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+      xmlns:adonisHp="clr-namespace:AdonisUI.Helpers;assembly=AdonisUI"
+      xmlns:local="clr-namespace:BiliMusic.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="800"
+      Title="Settings">
+
+    <Grid d:Background="{DynamicResource {x:Static adonisUi:Brushes.Layer0BackgroundBrush}}">
+        <Controls:IScrollViewer>
+            <Controls:IScrollViewer.Content>
+                <StackPanel>
+                    <TextBlock Text="Appearance" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource NewYork}" FontWeight="Bold" FontSize="26" Margin="10,0"/>
+                    <StackPanel Margin="10,10,0,0" TextBlock.Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}">
+                        <RadioButton x:Name="LightMode" Margin="20,5,20,5" Content="Light" Checked="LightMode_Checked"/>
+                        <RadioButton x:Name="DarkMode" Margin="20,5,20,5" Content="Dark" Checked="DarkMode_Checked"/>
+                    </StackPanel>
+                    <Border Height="2" Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}" Margin="10"/>
+                    <TextBlock Text="Cache" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource NewYork}" FontWeight="Bold" FontSize="26" Margin="10,0"/>
+                    <Grid >
+                        <StackPanel Margin="10,10,0,0" TextBlock.Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}">
+                            <StackPanel x:Name="CacheSize" Margin="10,10,10,0"/>
+                            <Button x:Name="_OpenFolder" Content="Open Folder" Margin="10"/>
+                        </StackPanel>
+                    </Grid>
+                    <Border Height="100"/>
+                </StackPanel>
+            </Controls:IScrollViewer.Content>
+        </Controls:IScrollViewer>
+    </Grid>
+</Page>

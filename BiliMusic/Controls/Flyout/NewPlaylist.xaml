@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="BiliMusic.Controls.Flyout.NewPlaylist"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BiliMusic.Controls.Flyout"
+             xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+             xmlns:adonisEx="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+             mc:Ignorable="d" 
+             Height="170" 
+             Width="240">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="NAME" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource SFPro}" FontSize="14"/>
+            <TextBox x:Name="name" adonisEx:WatermarkExtension.Watermark="e.g. Fav1"/>
+            <TextBlock Text="DESCRIPTION" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource SFPro}" FontSize="14"/>
+            <TextBox x:Name="desc" adonisEx:WatermarkExtension.Watermark="e.g. My Favorite Songs 1"/>
+            <Button x:Name="_Ok" Height="36" Width="36" Content="􀆅" FontFamily="{StaticResource SFPro}" FontSize="15" adonisEx:CornerRadiusExtension.CornerRadius="18" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

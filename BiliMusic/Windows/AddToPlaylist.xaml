@@ -1,0 +1,35 @@
+﻿<adonisControls:AdonisWindow x:Class="BiliMusic.Windows.AddToPlaylist"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI" 
+        Height="300" 
+        Width="400" 
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        IconVisibility="Collapsed" 
+        TitleBarBackground="Transparent"
+        ShowInTaskbar="False"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI" 
+                             xmlns:Controls="clr-namespace:BiliMusic.Controls">
+    <Grid Background="{DynamicResource {x:Static adonisUi:Brushes.Layer0BackgroundBrush}}" WindowChrome.IsHitTestVisibleInChrome="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Controls:IScrollViewer Margin="10,10,10,0">
+            <Controls:IScrollViewer.Content>
+                <StackPanel>
+                    <TextBlock Text="Add to Playlist" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource NewYork}" FontWeight="Bold" FontSize="26" Margin="10,0"/>
+                    <StackPanel x:Name="playlists"/>
+                </StackPanel>
+            </Controls:IScrollViewer.Content>
+        </Controls:IScrollViewer>
+        <Grid Grid.Row="1">
+            <Border Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}" BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}" BorderThickness="0,2,0,2"/>
+            <Button x:Name="_Cancel" Content="Close" Margin="10"/>
+        </Grid>
+    </Grid>
+</adonisControls:AdonisWindow>

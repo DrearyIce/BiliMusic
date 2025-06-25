@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="BiliMusic.Controls.MusicCard_Large"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BiliMusic.Controls"
+             xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+             xmlns:adonisEx="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+             mc:Ignorable="d" 
+             Margin="10,0"
+             Height="270" Width="200">
+    <Grid Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1HighlightBrush}}">
+            <TextBlock Text="􀑪" FontFamily="{StaticResource SFPro}" FontSize="100" HorizontalAlignment="Center" Foreground="{DynamicResource {x:Static adonisUi:Brushes.Layer1HighlightBorderBrush}}" VerticalAlignment="Center"/>
+            <Image x:Name="Cover" Stretch="UniformToFill" Height="200" Width="200"/>
+
+        </Grid>
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.OpacityMask>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="White" Offset="0.6"/>
+                    <GradientStop Color="Transparent" Offset="0.9"/>
+                </LinearGradientBrush>
+            </Grid.OpacityMask>
+            <Border Width="180" Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}"/>
+            <TextBlock x:Name="Title" Text="Title" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource SiYuan}" FontSize="20" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ShowVideoList" VerticalAlignment="Bottom" Padding="0" Background="Transparent" BorderBrush="Transparent" Click="ShowVideoList_Click">
+                    <TextBlock x:Name="UPName" Text="UP" Foreground="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}" FontFamily="{StaticResource PingFang}" FontSize="15"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Button x:Name="More" Grid.Row="1" Margin="10" Height="32" Width="32" adonisEx:CornerRadiusExtension.CornerRadius="16" VerticalAlignment="Center" HorizontalAlignment="Right" Content="···" FontWeight="Bold" Click="More_Click"/>
+    </Grid>
+</UserControl>

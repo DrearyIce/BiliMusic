@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="BiliMusic.Controls.Flyout.AddMusic"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BiliMusic.Controls.Flyout"
+             xmlns:adonisEx="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+             mc:Ignorable="d" 
+             Height="140" 
+             Width="300">
+    <Grid>
+        <Grid Margin="20">
+            <TextBox x:Name="bvs" adonisEx:WatermarkExtension.Watermark="Type Bv here e.g.BV......;BV......" Height="70" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Button x:Name="Add" VerticalAlignment="Bottom" Content="Add to list"/>
+        </Grid>
+    </Grid>
+</UserControl>

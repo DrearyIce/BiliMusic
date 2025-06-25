@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="BiliMusic.Controls.PlayingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+             xmlns:adonisEx="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+             xmlns:adonisControl="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+             xmlns:local="clr-namespace:BiliMusic.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <MediaElement x:Name="Media" LoadedBehavior="Manual" UnloadedBehavior="Manual" Volume="1"/>
+        <Grid VerticalAlignment="Bottom" Height="75">
+            <Border Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}"/>
+            <StackPanel Orientation="Horizontal">
+                <Grid Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1HighlightBrush}}" VerticalAlignment="Center" Margin="12.5,0,10,0" Height="50" Width="50">
+                    <TextBlock Text="􀑪" FontFamily="{StaticResource SFPro}" FontSize="25" HorizontalAlignment="Center" Foreground="{DynamicResource {x:Static adonisUi:Brushes.Layer1HighlightBorderBrush}}" VerticalAlignment="Center"/>
+                    <Image x:Name="Cover" Stretch="UniformToFill" Height="50" Width="50"/>
+                </Grid>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock x:Name="Title" Text="Title" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" FontFamily="{StaticResource SiYuan}" FontSize="18" VerticalAlignment="Top"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="ShowVideoList" VerticalAlignment="Bottom" Padding="0" Background="Transparent" BorderBrush="Transparent" Click="ShowVideoList_Click">
+                            <TextBlock x:Name="UPName" Text="UP" Foreground="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}" FontFamily="{StaticResource PingFang}" FontSize="15"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="_PlayOptionSwitch" Content="􀊞" FontFamily="{StaticResource SFPro}" FontSize="16" adonisEx:CornerRadiusExtension.CornerRadius="25" Height="40" Width="40" Margin="0,0,5,0"/>
+                <Button x:Name="_PreviousSong" Content="􀊎" FontFamily="{StaticResource SFPro}" FontSize="16" adonisEx:CornerRadiusExtension.CornerRadius="25" Height="40" Width="40"/>
+                <Button x:Name="_Play" Content="􀊄" FontFamily="{StaticResource SFPro}" FontSize="24" adonisEx:CornerRadiusExtension.CornerRadius="25" Height="50" Width="50" Margin="8"/>
+                <Button x:Name="_Loading" Visibility="Collapsed" FontSize="24" adonisEx:CornerRadiusExtension.CornerRadius="25" Height="50" Width="50" Margin="8">
+                    <ContentControl Focusable="False" ContentTemplate="{DynamicResource {x:Static adonisUi:Templates.LoadingDots}}" Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" Width="24" Height="24"/>
+                </Button>
+                <Button x:Name="_Pause" Content="􀊆" Visibility="Collapsed" FontFamily="{StaticResource SFPro}" FontSize="24" adonisEx:CornerRadiusExtension.CornerRadius="25" Height="50" Width="50" Margin="8"/>
+                <Button x:Name="_NextSong" Content="􀊐" FontFamily="{StaticResource SFPro}" FontSize="16" adonisEx:CornerRadiusExtension.CornerRadius="25" Height="40" Width="40" Margin="0,0,5,0"/>
+                <Button x:Name="_Like" Content="􀊴" FontFamily="{StaticResource SFPro}" FontSize="16" adonisEx:CornerRadiusExtension.CornerRadius="25" Height="40" Width="40"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button x:Name="_Volume" Grid.Row="1" Margin="5,0,0,0" Height="40" Width="40" adonisEx:CornerRadiusExtension.CornerRadius="20" Content="􀊩" FontFamily="{StaticResource SFPro}" FontSize="16"/>
+                <ToggleButton x:Name="ViewList" Grid.Row="1" Margin="10" Height="40" Width="40" adonisEx:CornerRadiusExtension.CornerRadius="20" Content="􀋲" FontFamily="{StaticResource SFPro}" FontSize="16"/>
+            </StackPanel>
+
+            <Border Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}" VerticalAlignment="Top" Height="4" Margin="0,-2"/>
+            <Slider x:Name="Progress" adonisEx:CornerRadiusExtension.CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,-10,0,0" Minimum="0" Maximum="100" RenderTransformOrigin="0.5,0.5" Height="20" BorderThickness="2"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Configurations>Debug;Release</Configurations>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="res\AppIcon.ico" />
+    <None Remove="res\font\NewYorkLarge-Regular.otf" />
+    <None Remove="res\font\SF-Pro-Display-Regular.otf" />
+    <None Remove="res\font\SF-Pro.ttf" />
+    <None Remove="res\font\SourceHanSerifSC-Light.otf" />
+    <None Remove="res\font\SourceHanSerifSC-Regular.otf" />
+    <None Remove="res\font\苹方黑体-准-简.ttf" />
+    <None Remove="res\Pic.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AppIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="res\AppIcon.ico" />
+    <Resource Include="res\font\苹方黑体-准-简.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AdonisUI" Version="1.17.1" />
+    <PackageReference Include="AdonisUI.ClassicTheme" Version="1.17.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="res\font\NewYorkLarge-Regular.otf" />
+    <Resource Include="res\font\SF-Pro-Display-Regular.otf" />
+    <Resource Include="res\font\SourceHanSerifSC-Regular.otf" />
+    <Resource Include="res\Pic.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
