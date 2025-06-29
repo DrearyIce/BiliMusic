@@ -14,4 +14,10 @@
 <img width="939" alt="Snipaste_2025-06-29_10-01-37" src="https://github.com/user-attachments/assets/8dadebe7-77a8-46d4-96aa-1b4c67d6ff09" />
 <img width="975" alt="Snipaste_2025-06-29_09-59-37" src="https://github.com/user-attachments/assets/3a4fb917-2ebd-4457-8ad7-fe3715b3ab0d" />
 
-## 感谢🙏
+## 感谢🙏 (不分先后）
+https://github.com/nilaoda/BBDown Bilibili Downloader - 一个命令行式哔哩哔哩下载器.<br>
+https://github.com/benruehl/adonis-ui Adonis UI - Lightweight UI toolkit for WPF applications offering classic but enhanced windows visuals<br>
+https://github.com/codebude/QRCoder QRCoder - A pure C# Open Source QR Code implementation<br>
+https://www.newtonsoft.com/json> Newtonsoft Json.NET - Popular high-performance JSON framework for .NET<br>
+https://github.com/FFmpeg/FFmpeg FFmpeg - FFmpeg is a collection of libraries and tools to process multimedia content such as audio, video, subtitles and related metadata<br>
+https://www.cnblogs.com/ 无私的知识分享者
